@@ -1,5 +1,225 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background: #F3F6FD;
+    font-weight: 400;
+}
+
+.app {
+    display: flex;
+}
+
+.logo {
+    margin-bottom: 50px;
+}
+
+.panel {
+    background: white;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu__item {
+    background: #FFFFFF;
+    box-shadow: 0 8px 14px 0 #3E6BE01F;
+    border-radius: 14px;
+    border: none;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.menu__item:hover {
+    background: #6A6AFB;
+}
+
+.menu__item:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.menu__item_active {
+    background: #5051F9;
+}
+
+.menu__item_active img {
+    filter: brightness(0) invert(1);
+}
+
+.menu__add {
+    border: 1px solid #CAD5FF;
+    border-radius: 14px;
+    height: 45px;
+    width: 45px;
+    background: none;
+    cursor: pointer;
+}
+
+.menu__add:hover {
+    background: #EFF2FF;
+}
+
+.menu__add:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.content {
+    min-width: 900px;
+    padding: 45px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 33px;
+    text-align: left;
+    color: #000000;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 235px;
+}
+
+.progress__text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress__name {
+    font-size: 14px;
+    line-height: 16px;
+    color: #232360
+}
+
+.progress__percent {
+    font-size: 12px;
+    line-height: 13px;
+    color: #768396;
+}
+
+.progress__bar {
+    width: 100%;
+    background: #E6E9ED;
+    border-radius: 4px;
+    height: 5px;
+    position: relative;
+}
+
+.progress__cover-bar {
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    border-radius: 4px;
+    background: #5051F9;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.habit {
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.habit__day {
+    background: #FBFAFF;
+    border-right: 1px solid #E7EBFB;
+    border-radius: 10px 0 0 10px;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 20px 40px;
+    min-width: 150px;
+}
+
+.habit__comment {
+    font-size: 16px;
+    line-height: 16px;
+    padding: 20px 25px;
+}
+
+.habit__delete {
+    margin-left: auto;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.habit__delete:hover {
+    background: #EFF2FF;
+}
+
+input {
+    background: #FFFFFF;
+    border: 1px solid #E7EBFB;
+    border-radius: 9px;
+    padding: 12px 20px;
+    flex: 1;
+}
+
+.habit__form {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100%;
+    padding: 0 10px 0 25px;
+    position: relative;
+}
+
+.input_icon {
+    padding-left: 45px;
+}
+
+.input__icon {
+    position: absolute;
+    top: 10px;
+    left: 45px;
+}
+
+.button {
+    border-radius: 9px;
+    background: #EDECFE;
+    border: none;
+    color: #5051F9;
+    font-size: 13px;
+    line-height: 14px;
+    padding: 14px 30px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #dcdaff;
 }

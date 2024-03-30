@@ -1,14 +1,79 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Habits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;600&display=swap"
+          rel="stylesheet"/>
     <script defer src="scripts/app.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-
+<div class="app">
+    <aside class="panel">
+        <img class="logo" src="/images/logo.svg" alt="logo">
+        <nav class="menu">
+            <div class="menu__list">
+                <button class="menu__item menu__item_active">
+                    <img src="/images/water.svg" alt="water">
+                </button>
+                <button class="menu__item">
+                    <img src="/images/plate.svg" alt="plate">
+                </button>
+            </div>
+            <button class="menu__add">
+                <img src="/images/add.svg" alt="add">
+            </button>
+        </nav>
+    </aside>
+    <div class="content">
+        <header>
+            <h1>Push-ups</h1>
+            <div class="progress">
+                <div class="progress__text">
+                    <div class="progress__name">Progress</div>
+                    <div class="progress__percent">80%</div>
+                </div>
+                <div class="progress__bar">
+                    <div class="progress__cover-bar"></div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div>
+                <div class="habit">
+                    <div class="habit__day">
+                        Day 1
+                    </div>
+                    <div class="habit__comment">
+                        The first approach is always difficult
+                    </div>
+                    <button class="habit__delete">
+                        <img src="/images/delete.svg" alt="delete">
+                    </button>
+                </div>
+            </div>
+            <div class="habit">
+                <div class="habit__day">
+                    Day 2
+                </div>
+                <form class="habit__form">
+                    <label>
+                        <input class="input_icon" type="text" placeholder="Comment">
+                    </label>
+                    <img class="input__icon" src="/images/comment.svg" alt="comment">
+                    <button class="button">
+                        Done
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
 </body>
 </html>
