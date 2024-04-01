@@ -1,6 +1,7 @@
 'use strict';
 let habits = [];
 const HABIT_KEY = 'HABIT_KEY';
+let initialActiveHabitId;
 
 /* page */
 const page = {
@@ -79,6 +80,7 @@ function rerenderContent(activeHabit) {
 }
 
 function rerender(activeHabitId) {
+    initialActiveHabitId = activeHabitId;
     const activeHabit = habits.find(habit => habit.id === activeHabitId);
     if (!activeHabit) {
         return;
@@ -86,6 +88,29 @@ function rerender(activeHabitId) {
     rerenderMenu(activeHabit);
     rerenderHead(activeHabit);
     rerenderContent(activeHabit);
+}
+
+/* work with days */
+function addDays(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const comment = data.get('comment');
+    event.target['comment'].classList.remove('error');
+    if (!comment) {
+        event.target['comment'].classList.add('error');
+    }
+    habits = habits.map(habit => {
+        if (habit.id === initialActiveHabitId) {
+            return {
+                ...habit,
+                days: habit.days.concat([{comment}]),
+            }
+        }
+        return habit;
+    });
+    event.target['comment'].value = '';
+    rerender(initialActiveHabitId);
+    saveData();
 }
 
 /* init */

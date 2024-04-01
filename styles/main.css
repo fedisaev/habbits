@@ -192,8 +192,12 @@ input {
     line-height: 16px;
 }
 
-input::placeholder{
+input::placeholder {
     color: #8899AB;
+}
+
+input.error {
+    border: 1px solid red;
 }
 
 .habit__form {
