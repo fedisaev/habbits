@@ -70,7 +70,7 @@ function rerenderContent(activeHabit) {
         element.innerHTML = `
                     <div class="habit__day">Day ${Number(index) + 1}</div>
                     <div class="habit__comment">${activeHabit.days[index].comment}</div>
-                    <button class="habit__delete">
+                    <button class="habit__delete" onclick="deleteDay(${index})">
                         <img src="/images/delete.svg" alt="delete ${index + 1}">
                     </button>
         `;
@@ -109,6 +109,21 @@ function addDays(event) {
         return habit;
     });
     event.target['comment'].value = '';
+    rerender(initialActiveHabitId);
+    saveData();
+}
+
+function deleteDay(index) {
+    habits = habits.map(habit => {
+        if (habit.id === initialActiveHabitId) {
+            habit.days.splice(index, 1);
+            return {
+                ...habit,
+                days: habit.days,
+            };
+        }
+        return habit;
+    });
     rerender(initialActiveHabitId);
     saveData();
 }
