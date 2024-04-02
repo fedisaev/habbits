@@ -20,7 +20,7 @@
         <img class="logo" src="/images/logo.svg" alt="logo">
         <nav class="menu">
             <div class="menu__list"></div>
-            <button class="menu__add">
+            <button class="menu__add" onclick="togglePopup()">
                 <img src="/images/add.svg" alt="add habit">
             </button>
         </nav>
@@ -41,7 +41,7 @@
         <main>
             <div id="days"></div>
             <div class="habit">
-                <div class="habit__day">Day </div>
+                <div class="habit__day">Day</div>
                 <form class="habit__form" onsubmit="addDays(event)">
                     <input name="comment" class="input_icon" type="text" placeholder="Comment">
                     <img class="input__icon" src="/images/comment.svg" alt="comment icon">
@@ -51,6 +51,32 @@
                 </form>
             </div>
         </main>
+    </div>
+    <div class="cover cover_hidden" id="add-habit-popup">
+        <div class="popup">
+            <h2>New habit</h2>
+            <div class="icon-label">Icon</div>
+            <div class="icon-select">
+                <button class="icon icon_active" onclick="setIcon(this,'sport')">
+                    <img src="./images/sport.svg" alt="sport-icon">
+                </button>
+                <button class="icon" onclick="setIcon(this,'water')">
+                    <img src="./images/water.svg" alt="water-icon">
+                </button>
+                <button class="icon" onclick="setIcon(this,'food')">
+                    <img src="./images/food.svg" alt="food-icon">
+                </button>
+            </div>
+            <form class="popup__form" onsubmit="addHabit(event)">
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="icon" hidden placeholder="Icon" value="sport">
+                <input type="number" name="target" placeholder="Purpose">
+                <button class="button" type="submit">Add</button>
+            </form>
+            <button class="popup__close" onclick="togglePopup()">
+                <img src="./images/close.svg" alt="close popup">
+            </button>
+        </div>
     </div>
 </div>
 </body>
